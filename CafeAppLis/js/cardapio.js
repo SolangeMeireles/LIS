@@ -1,51 +1,47 @@
-import itens from './model/dataset.js';
-import foodsModel from './model/foods.js';
-
-foodsModel.load(itens);
-let foods = foodsModel.readAll();
-
-function initFoodsCard () {t.j
-  
-  for (let item of foods) {
-
-    const view = createFoodCardItem(item);
-  
-    //let itensCardapio = document.querySelector('.itens-cardapio');
-    let itensCardapio = document.getElementById("itens-cardapio");
-    itensCardapio.insertAdjacentHTML('beforeend', view);
-  }
+/**
+ * Carregar os itens de food do dataset para o LocalStorage.
+ * @param {*} newFoods
+ */
+function load(newFoods) {
+  localStorage.setItem('foods-app:foods', JSON.stringify(newFoods));
 }
 
-function createFoodCardItem (item) {
-
-    const view = `<div class="col-3 card my-1 mx-1 py-1">
-                    <img src="${item.imagem}" class="card-img-top" alt="...">
-  
-                    <div class="card-body">
-                      <h5 class="card-title">${item.nome}</h5>
-                      <p class="card-text">${item.descricao}</p>
-                      <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                  </div>`;
-
-    return view;
+/**
+ * Ler todos os registros de food.
+ * @returns json
+ */
+function readAll() {
+  const stringFood = localStorage.getItem('foods-app:foods');
+  return JSON.parse(stringFood);
 }
 
+function nextId() {
+  const foods = readAll();
 
-// Captar o evento de submissão do formulário e adicionar o item no cartão (card).
-// const foodForm = document.querySelector('#foodForm');
-const foodForm = document.getElementById("foodForm");
+  const ids = foods.map((food) => food.id);
 
-foodForm.onsubmit = function (event) {
-  // Previnir que o modal fique abrindo e fechando em loop.
-  event.preventDefault();
+  const maxId = Math.max(...ids);
 
-  let newFood = Object.fromEntries(new FormData(foodForm));
-  foodsModel.create(newFood);
-
-  const foodCard = createFoodCardItem(newFood);
-  let itensCardapio = document.getElementById("itens-cardapio");
-  itensCardapio.insertAdjacentHTML('beforeend', foodCard);
+  return maxId + 1;
 }
 
-initFoodsCard();
+/**
+ * Criar um novo registro de food.
+ * @param {*} food
+ * @returns food
+ */
+function create(food) {
+  let id = nextId();
+
+  food = { id: id, ...food };
+
+  const foods = readAll();
+
+  const newFoods = [...foods, food];
+
+  load(newFoods);
+
+  return food;
+}
+
+export default { load, readAll, create };
