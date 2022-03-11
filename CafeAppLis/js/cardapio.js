@@ -4,7 +4,7 @@ import foodsModel from './model/foods.js';
 foodsModel.load(itens);
 let foods = foodsModel.readAll();
 
-function initFoodsCard () {
+function initFoodsCard () {t.j
   
   for (let item of foods) {
 
