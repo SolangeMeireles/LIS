@@ -1,106 +1,235 @@
 <!DOCTYPE html>
+<!--É uma declaração que informa qual tipo de documento utilizado neste momento estou utilizando html:5  -->
 <html>
+<!--Tag de abertura do HTML = HyperText Markup Language (Hiper texto)-->
 
 <head>
+  <!-- Uma das principais tag's dentro do html, utilizada para configurações e informações para o navegador-->
 
-  <meta charset="UTF-8">
-  <title>Document</title>
+  <meta charset="UTF-8"><!-- Tag utilizada sobre os caracteres especiais utilizadas na página.-->
+
+  <title>Document</title> <!-- Título da página que se encontra na aba do navegador  -->
 
   <!-- Bootstrap - CSS -->
+  <!-- Utilização do bootstrap-->
+  <!-- Importa o bootstrap 5, via CDN. Com ele não precisa do CSS, pois ele tem sua propria estilização.-->
   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Estilo da aplicação -->
   <link rel="stylesheet" href="css/index.css">
 
 
+  <!-- Estilo da aplicação -->
+  <!-- Tag do link inteliga o html com a estilização do arquivo .css-->
+  <link rel="stylesheet" href="css/index.css">
+
 </head>
+<!--Tag de fechamento </> -->
 
 <body>
+  <!-- Tag corpo onde é impresso todo o conteudo como: textos, imagens, etc.-->
 
   <header>
+    <!-- A barra que fica localizado no topo da pagina, onde apresenta a logo da pagina-->
+
+
     <!-- Toolbar -->
+    <!--Barra de ferramenta de desenvolvedor web-->
+    <!--Mostra as cores utilizadas na pagina, personaliza as dimensões de redimencionamento na janela, edita o html, posiciona frames, caixa de busca na edição das CSS e do html de uma pagina, validação-->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+      <!-- .container-fluid: contêiner de largura total -->
+
+      <!-- A <div> tag utilizada de forma generica para divisão de conteudo como: estilização, organização ou agrupalos.-->
+
       <div class="container-fluid">
+
+        <!-- A <a> tag ancora define um hiperlink, que pode ser adicionado o link de referencia. -->
+
         <a class="navbar-brand" href="#">
           Coffee
+
+          <!-- A <small> tag define um texto pequeno-->
+
           <small>Arábica</small>
         </a>
 
+        <!-- A tag button é utlizada para criar algo clicavel -->
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+          <!-- O elemento HTML <span> é um conteiner generico em linha para definir o texto e a marcação que ele possui. Series conteudos agrupados. -->
+
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- A <div> tag utilizada de forma generica para divisão de conteudo como: estilização, organização ou agrupalos.-->
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            <!-- Abertura da tag ul = lista não ordenada-->
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <!-- Abertura da tag li = Item da lista desordenada com classificação nav-item para estilização-->
+              <a class="nav-link active" aria-current="page" href="#">Home</a> <!-- A <a> tag ancora define um hiperlink, que pode ser adicionado o link de referncia.-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./cardapio.html">Cardápio</a>
+              <!-- Abertura da tag li = Item da lista desordenada com classificação nav-item para estilização-->
+              <a class="nav-link" href="cardapio.html">Cardápio</a> <!-- A <a> tag ancora define um hiperlink, que pode ser adicionado o link de referncia.-->
             </li>
+            <!--Fechamento da tag <li> lista desordenanda.-->
             <li class="nav-item">
+              <!--Abertura da tag li = Item da lista desordenada-->
               <a class="nav-link" href="#">Sobre</a>
             </li>
-          </ul>
+            <!--Fechamento da tag <li> lista desordenanda.-->
+          </ul> <!-- Fechamento da tag <ul> lista não ordenada -->
         </div>
+        <!--Fechamento da tag <div> divisão de conteudo-->
       </div>
     </nav>
-  </header>
+  </header> <!-- Fechamento do cabeçalho da página-->
 
+
+  <!-- A tag de divisão de conteudo a <main> é responsavel por armazenar o conteudo principal da pagina, para o navegador ele dá mais importancia ao contúdo que está dentro da main, pois ele identifica tudo que estiver dentro dela é um conteúdo de maior importância.-->
   <main>
+
+    <!--Utilização da tag <section> é utilizado para separar conteudo que quero utilizar dentro de uma "caixinha". Abrangem todo conteudo dentro de uma seção. Onde o conteudo faz sentido junto e será dado uma atenção especial-->
+
     <section>
+
+      <!-- A <div> tag utilizada de forma generica para divisão de conteudo como: estilização, organização ou agrupalos.-->
+
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- A <div> tag utilizada de forma generica para divisão de conteudo como: estilização, organização ou agrupalos.-->
+
         <div class="carousel-indicators">
+
+          <!-- Os botões indicativos estão ligados a uma imagem ao ser clicado-->
+
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+        <!--Fechamento da tag <div> onde é dividido o conteudo.-->
+
+        <!-- A <div> tag utilizada de forma generica para divisão de conteudo como: estilização, organização ou agrupalos.-->
+
         <div class="carousel-inner">
+
+          <!-- A <div> tag utilizada de forma generica para divisão de conteudo como: estilização, organização ou agrupalos.-->
+
           <div class="carousel-item active">
+
+            <!-- Tag img = imagem, é necessario adicionar o caminho de origem de onde foi retirado a imagem.Ela vem acompanhada do alt, se caso a imagem não exista ou tenha problema para encontrar a imagem ele automaticamente apresenta a mensagem alternativa.-->
 
             <img src="https://images.unsplash.com/photo-1609593147714-46c546d38137?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2551&q=80" class="d-block w-100" alt="...">
 
+            <!-- A tag div definida para ser colocada como elemento do caroseul -->
+
             <div class="carousel-caption d-none d-md-block">
+
+              <!-- Título de nível 5 para a imagem 1 -->
+
               <h5>First slide label</h5>
+
+              <!-- Parágrafo definido para a imagem 1 sendo feito uma descrição -->
+
               <p>Some representative placeholder content for the first slide.</p>
             </div>
           </div>
+
+          <!-- Tag definida para o elemento adicionado na seção do carrousel, sendo definido como item-->
+
+
           <div class="carousel-item">
+
+            <!-- Tag img foi colocada para definir a imagem como segundo -->
 
             <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="...">
 
+            <!-- A tag div definida para ser colocada como elemento do caroseul -->
+
             <div class="carousel-caption d-none d-md-block">
+
+              <!-- Abre e fecha tag de título de nível 5-->
+
               <h5>Second slide label</h5>
+
+              <!-- Abre e fecha tag de texto-->
+
               <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
 
+
+          <!-- Tag definida para o elemento adicionado na seção do carrousel, sendo definido como item-->
+
           <div class="carousel-item">
+
+            <!-- Tag img foi colocada para definir a imagem como terceiro -->
 
             <img src="https://images.unsplash.com/photo-1581068106017-2349c727e298?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" class="d-block w-100" alt="...">
 
+            <!-- A tag div definida para ser colocada como elemento do caroseul -->
+
             <div class="carousel-caption d-none d-md-block">
+
+              <!-- Título de nível 5 para a imagem 3 -->
+
               <h5>Third slide label</h5>
+
+              <!-- Parágrafo definido para a imagem 3 sendo feito uma descrição -->
+
               <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>
 
+          <!-- Tag definida para o elemento adicionado na seção do carrousel, sendo definido como item-->
+
           <div class="carousel-item">
+
+            <!-- Tag img foi colocada para definir a imagem como quarta -->
 
             <img src="https://images.unsplash.com/photo-1507915135761-41a0a222c709?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" class="d-block w-100" alt="...">
 
+            <!-- A tag div definida para ser colocada como elemento do caroseul -->
+
             <div class="carousel-caption d-none d-md-block">
+
+              <!-- Título de nível 5 para a imagem 4 -->
+
               <h5>Third slide label</h5>
+
+              <!-- Parágrafo definido para a imagem 4 sendo feito uma descrição -->
+
               <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>
         </div>
+
+        <!-- Botão que ao ser clicado irá retornar alguma das imagens dos slides do carousel -->
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+
+          <!-- A tag span irá manter o boostrap com o css e consequentemente o javascript -->
+
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+          <!-- A tag span que indica o imagem ou nome do botão -->
+
           <span class="visually-hidden">Previous</span>
         </button>
+
+        <!-- Botão de próximo do carousel, para as imagens contidas na lista das imagens(elementos) -->
+
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+
+          <!-- A tag span irá manter o boostrap com o css e consequentemente o javascript -->
+
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+          <!-- A tag span que indica o imagem ou nome do botão -->
+
           <span class="visually-hidden">Next</span>
         </button>
       </div>
@@ -108,14 +237,24 @@
     </section>
 
     <section>
+
+      <!-- Título dentro do <h1> é o principal onde os assuntos dentro dos textos é voltado para ele-->
+
       <h1>Minha aplicação com JS!</h1>
 
+      <!-- A <a> tag ancora define um hiperlink, que pode ser adicionado o link de referncia. -->
+
       <a href="semana3_atividade1.html">Semana 3</a>
+
+      <!--  Parágrafo que relata uma descrição com a utilização do Lorem-->
 
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A voluptate vero voluptas quo ipsum alias repellat quibusdam ipsam asperiores laboriosam veritatis earum porro, provident sequi aspernatur nisi eius, iste odio.</p>
     </section>
 
   </main>
+  <!--Tag de fechamento do </main> onde se encontra partes importantes.-->
+
+  <!--  Rodapé da página pode ser localizado no final da pagina, podemos encontrar mapa de geolocalização, contato.-->
 
   <footer></footer>
 
@@ -123,6 +262,6 @@
   <!-- Bootstrap - Js -->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+</body> <!-- Tag de fechamento do corpo da página-->
 
-</html>
+</html> <!-- Tag de fechamento do html-->
